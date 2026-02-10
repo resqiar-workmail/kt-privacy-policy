@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kebijakan Privasi & Syarat Ketentuan — KamiTolong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --ink: #1a1a2e;
+      --ink-soft: #3d3d5c;
+      --ink-muted: #6b6b8a;
+      --accent: #2d6a4f;
+      --accent-light: #e8f5ef;
+      --rule: #dde3f0;
+      --bg: #f7f8fc;
+      --white: #ffffff;
+      --serif: 'Lora', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 248, 252, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      height: 56px;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      margin-right: auto;
+    }
+
+    .nav-link {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent);
+    }
+
+    /* ── HERO ── */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--rule);
+      padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+    }
+
+    .header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .brand-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 0.3em 0.85em;
+      border-radius: 2px;
+      margin-bottom: 1.25rem;
+    }
+
+    header h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+
+    .header-meta {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── LAYOUT ── */
+    .layout {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem);
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .toc-title {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 1rem;
+    }
+
+    .toc ol {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.3rem 2rem;
+    }
+
+    .toc li {
+      counter-increment: toc;
+    }
+
+    .toc a {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .toc a:hover {
+      color: var(--accent);
+    }
+
+    .toc a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--ink-muted);
+      flex-shrink: 0;
+    }
+
+    /* ── DOCUMENT SECTIONS ── */
+    .doc-section {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 2rem;
+    }
+
+    .doc-section+.doc-section {
+      margin-top: 0;
+    }
+
+    /* ── SECTION HEADERS ── */
+    .section-label {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .doc-section>h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      color: var(--ink);
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--rule);
+      line-height: 1.3;
+    }
+
+    /* ── ARTICLE HEADINGS ── */
+    h3 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 2rem 0 0.6rem;
+      letter-spacing: -0.01em;
+    }
+
+    h3:first-of-type {
+      margin-top: 0;
+    }
+
+    /* ── PARAGRAPHS ── */
+    p {
+      color: var(--ink-soft);
+      margin-bottom: 0.85rem;
+    }
+
+    /* ── LISTS ── */
+    ul,
+    ol {
+      padding-left: 1.4rem;
+      margin-bottom: 0.85rem;
+      color: var(--ink-soft);
+    }
+
+    li {
+      margin-bottom: 0.3rem;
+    }
+
+    li::marker {
+      color: var(--accent);
+    }
+
+    /* ── CALLOUT BOXES ── */
+    .callout {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+    }
+
+    .callout strong {
+      display: block;
+      color: var(--accent);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    /* ── WARNING BOX ── */
+    .warning {
+      background: #fff8e6;
+      border-left: 3px solid #d4a017;
+      border-radius: 0 4px 4px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+    }
+
+    .warning strong {
+      display: block;
+      color: #a07800;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    /* ── IMPORTANT DECLARATION ── */
+    .declaration {
+      background: #fff3f3;
+      border: 1px solid #ffc0c0;
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+      font-size: 0.85rem;
+      color: #5c2222;
+      font-weight: 400;
+    }
+
+    /* ── CONTACT CARDS ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+
+    .contact-card {
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 1.25rem;
+    }
+
+    .contact-card .contact-type {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-card a {
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      word-break: break-all;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-tip {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      font-style: italic;
+      margin-top: 0.85rem;
+    }
+
+    /* ── DIVIDER ── */
+    .doc-divider {
+      border: none;
+      border-top: 2px dashed var(--rule);
+      margin: 2.5rem 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .footer-brand {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-date {
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .toc ol {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#"></a>
+    <a class="nav-link" href="#kebijakan-privasi">Kebijakan Privasi</a>
+    <a class="nav-link" href="#syarat-ketentuan">Syarat dan Ketentuan</a>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="brand-tag">Dokumen Legal</div>
+      <h1>Kebijakan Privasi &amp;<br>Syarat dan Ketentuan</h1>
+      <p class="header-meta">Terakhir diperbarui: Februari 2026</p>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+      <div class="toc-title">Daftar Isi</div>
+      <ol>
+        <li><a href="#priv-1">Tentang Platform KamiTolong</a></li>
+        <li><a href="#priv-2">Informasi yang Kami Kumpulkan</a></li>
+        <li><a href="#priv-3">Cara Kami Mengumpulkan Data</a></li>
+        <li><a href="#priv-4">Cara Kami Menggunakan Data</a></li>
+        <li><a href="#priv-5">Pembagian Informasi</a></li>
+        <li><a href="#priv-6">Keamanan Data</a></li>
+        <li><a href="#priv-7">Hak Anda atas Data Pribadi</a></li>
+        <li><a href="#priv-8">Cara Menghapus Data</a></li>
+        <li><a href="#priv-9">Penyimpanan Data</a></li>
+        <li><a href="#priv-10">Layanan Pihak Ketiga</a></li>
+        <li><a href="#priv-11">Kewajiban Pengguna</a></li>
+        <li><a href="#priv-12">Perubahan Kebijakan</a></li>
+        <li><a href="#syarat-1">Pendahuluan</a></li>
+        <li><a href="#syarat-2">Definisi</a></li>
+        <li><a href="#syarat-3">Ketentuan Umum</a></li>
+        <li><a href="#syarat-4">Akun, Password, dan Keamanan</a></li>
+        <li><a href="#syarat-5">Penggunaan Platform</a></li>
+        <li><a href="#syarat-6">Penolakan Jaminan</a></li>
+        <li><a href="#syarat-7">Ganti Rugi</a></li>
+        <li><a href="#syarat-8">Pilihan Hukum</a></li>
+      </ol>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!--              KEBIJAKAN PRIVASI                  -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div class="doc-section" id="kebijakan-privasi">
+      <span class="section-label">Dokumen I</span>
+      <h2>Kebijakan Privasi</h2>
+
+      <p>KamiTolong berkomitmen untuk melindungi privasi dan keamanan data Anda sesuai dengan Undang-Undang Nomor 27
+        Tahun 2022 tentang Perlindungan Data Pribadi. Kebijakan ini menjelaskan bagaimana kami mengumpulkan,
+        menggunakan, dan melindungi informasi Anda saat menggunakan platform kami.</p>
+
+      <h3 id="priv-1">1. Tentang Platform KamiTolong</h3>
+      <p>KamiTolong adalah platform iklan baris jasa yang mempertemukan penyedia jasa dan pengguna jasa. Kami
+        menyediakan sarana untuk saling mengiklankan penawaran maupun permintaan jasa, namun tidak bertanggung jawab
+        atas pelaksanaan jasa yang disepakati oleh para pengguna.</p>
+
+      <h3 id="priv-2">2. Informasi yang Kami Kumpulkan</h3>
+      <p>Kami mengumpulkan informasi untuk memberikan pengalaman terbaik:</p>
+      <ul>
+        <li>Informasi akun: nama/username, email, nomor telepon, dan Google ID</li>
+        <li>Aktivitas platform: riwayat pencarian, percakapan, dan iklan yang Anda buat</li>
+        <li>Informasi teknis: perangkat, IP address, dan sistem operasi</li>
+        <li>Data lokasi: untuk menampilkan iklan terdekat (dengan izin Anda)</li>
+      </ul>
+
+      <h3 id="priv-3">3. Cara Kami Mengumpulkan Data</h3>
+      <p>Data dikumpulkan ketika Anda:</p>
+      <ul>
+        <li>Mendaftar dan mengelola akun</li>
+        <li>Membuat atau melihat iklan jasa</li>
+        <li>Berkomunikasi dengan pengguna lain</li>
+        <li>Menghubungi customer service kami</li>
+        <li>Berinteraksi dengan media sosial resmi kami</li>
+      </ul>
+
+      <h3 id="priv-4">4. Cara Kami Menggunakan Data Anda</h3>
+      <p>Informasi Anda digunakan untuk:</p>
+      <ul>
+        <li>Menyediakan dan meningkatkan layanan platform</li>
+        <li>Personalisasi konten, iklan, dan rekomendasi yang relevan</li>
+        <li>Memfasilitasi komunikasi antara penyedia dan pengguna jasa</li>
+        <li>Mengirim notifikasi penting dan informasi layanan</li>
+        <li>Meningkatkan keamanan dan mencegah penyalahgunaan</li>
+        <li>Analitik dan pengembangan fitur baru</li>
+      </ul>
+
+      <h3 id="priv-5">5. Pembagian Informasi</h3>
+      <p>Kami tidak menjual data Anda. Informasi hanya dibagikan kepada:</p>
+      <ul>
+        <li>Penyedia layanan pihak ketiga yang mendukung operasional aplikasi (server, OTP WhatsApp, OTP Email)</li>
+        <li>Pihak berwenang jika diwajibkan oleh hukum atau untuk keperluan investigasi</li>
+        <li>Pengguna lain dalam konteks komunikasi dan transaksi jasa</li>
+      </ul>
+      <div class="callout">
+        <strong>Catatan</strong>
+        Konten dan iklan yang Anda bagikan di platform dapat dilihat oleh pengguna lain. Berhati-hatilah saat membagikan
+        informasi pribadi.
+      </div>
+
+      <h3 id="priv-6">6. Keamanan Data</h3>
+      <p>Kami menerapkan langkah-langkah keamanan yang wajar untuk melindungi data Anda dari akses, penggunaan, dan
+        pengungkapan tanpa izin. Namun, tidak ada sistem yang 100% aman. Kami terus berupaya memberikan perlindungan
+        terbaik sesuai standar industri.</p>
+
+      <h3 id="priv-7">7. Hak Anda atas Data Pribadi</h3>
+      <p>Anda memiliki hak untuk:</p>
+      <ul>
+        <li>Mengakses dan memperbarui data pribadi Anda</li>
+        <li>Meminta perbaikan data yang tidak akurat</li>
+        <li>Menghapus akun dan data pribadi Anda</li>
+        <li>Mencabut izin akses lokasi kapan saja</li>
+      </ul>
+      <p>Penghapusan akun dilakukan dalam bentuk soft delete. Akun dapat diaktifkan kembali dalam 30 hari, setelah itu
+        akan dihapus permanen dari tampilan. Data tertentu mungkin tetap tersimpan di server untuk keperluan audit dan
+        kepatuhan hukum.</p>
+
+      <h3 id="priv-8">8. Cara Menghapus Data</h3>
+      <p>Anda dapat menghapus akun secara mandiri melalui pengaturan aplikasi. Untuk bantuan lebih lanjut atau
+        permintaan khusus, hubungi kami melalui email di bawah.</p>
+
+      <h3 id="priv-9">9. Penyimpanan Data</h3>
+      <p>Data pribadi Anda disimpan selama diperlukan untuk tujuan pengumpulannya atau sesuai ketentuan hukum. Pihak
+        ketiga yang menerima data Anda akan mengikuti kebijakan penyimpanan mereka sendiri.</p>
+
+      <h3 id="priv-10">10. Layanan Pihak Ketiga</h3>
+      <p>Platform kami menggunakan layanan pihak ketiga terbatas untuk infrastruktur teknis. Kami tidak bertanggung
+        jawab atas kebijakan privasi atau keamanan website/aplikasi pihak ketiga yang Anda kunjungi melalui tautan di
+        platform kami.</p>
+
+      <h3 id="priv-11">11. Kewajiban Pengguna</h3>
+      <p>Dengan menggunakan platform, Anda setuju untuk:</p>
+      <ul>
+        <li>Memberikan informasi yang akurat dan terkini</li>
+        <li>Tidak menyalahgunakan data pengguna lain</li>
+        <li>Tidak mengunggah konten ilegal atau yang melanggar hak pihak lain</li>
+        <li>Tidak menggunakan platform untuk tujuan yang merugikan</li>
+      </ul>
+
+      <h3 id="priv-12">12. Perubahan Kebijakan</h3>
+      <p>Kebijakan ini dapat diperbarui sewaktu-waktu untuk mencerminkan perubahan layanan atau peraturan. Perubahan
+        signifikan akan diberitahukan melalui email, notifikasi push, atau pengumuman di aplikasi. Penggunaan
+        berkelanjutan setelah perubahan berarti Anda menyetujui kebijakan yang diperbarui.</p>
+
+      <h3>13. Hukum yang Berlaku</h3>
+      <p>Kebijakan ini tunduk pada Undang-Undang Nomor 27 Tahun 2022 tentang Perlindungan Data Pribadi dan peraturan
+        pelaksananya yang berlaku di Indonesia.</p>
+
+      <h3>14. Hubungi Kami</h3>
+      <p>Untuk pertanyaan, keluhan, atau permintaan terkait kebijakan privasi dan data pribadi Anda, silakan hubungi:
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-type">Email Umum</div>
+          <a href="mailto:kamitolongcare@gmail.com">kamitolongcare@gmail.com</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-type">Masalah Hukum &amp; Privasi</div>
+          <a href="mailto:legalkamitolong@gmail.com">legalkamitolong@gmail.com</a>
+        </div>
+      </div>
+      <p class="contact-tip">Tip: Cantumkan subjek email yang jelas (contoh: "Permintaan Penghapusan Data") agar kami
+        dapat merespons lebih cepat.</p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!--             SYARAT DAN KETENTUAN                -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div class="doc-section" id="syarat-ketentuan">
+      <span class="section-label">Dokumen II</span>
+      <h2>Syarat dan Ketentuan</h2>
+
+      <h3 id="syarat-1">1. Pendahuluan</h3>
+      <p>Selamat datang di aplikasi KamiTolong ("Aplikasi" atau "KamiTolong"). Silakan baca Syarat Layanan ("Syarat
+        Layanan" atau "Syarat Layanan KamiTolong") berikut dengan cermat sebelum menggunakan Aplikasi ini atau membuka
+        akun di Aplikasi ("Akun") agar Anda mengetahui tentang hak dan kewajiban hukum Anda sehubungan dengan KamiTolong
+        (masing-masing dan bersama-sama, "KamiTolong" atau "Kami").</p>
+      <p>Dengan mengunduh, mendaftar dan menggunakan Aplikasi, maka Pengguna Aplikasi ("Anda" atau "Pengguna") dianggap
+        telah membaca, mengerti, memahami dan menyetujui semua isi dalam Syarat dan Ketentuan ini. Syarat dan Ketentuan
+        ini merupakan bentuk kesepakatan yang dituangkan dalam sebuah perjanjian yang sah antara Pengguna dengan Kami.
+      </p>
+      <p>"Layanan" yang kami berikan atau sediakan termasuk (a) Aplikasi berbasis Android dan iOS; (b) Layanan platform
+        online untuk menghubungkan Penyedia Jasa dan Pengguna Jasa; (c) Seluruh sistem, fitur, data, pemrograman,
+        perangkat lunak yang disediakan oleh KamiTolong.</p>
+      <p>KamiTolong menghubungkan Penyedia Jasa dan Pengguna Jasa secara digital, sehingga Pengguna dapat menemukan jasa
+        dan/atau penawaran jasa apa pun secara online melalui Aplikasi. Setiap iklan berupa penawaran jasa dan/atau
+        permintaan jasa yang dipublikasikan oleh Pengguna akan melalui proses moderasi administratif oleh admin
+        KamiTolong sebelum ditayangkan di Aplikasi.</p>
+
+      <div class="warning">
+        <strong>Penting</strong>
+        Moderasi dilakukan untuk menilai kelayakan iklan agar tidak memuat konten ilegal, namun tidak dapat dijadikan
+        jaminan bahwa setiap iklan sepenuhnya terbebas dari unsur ilegal atau pelanggaran hukum. Proses moderasi tidak
+        merupakan verifikasi atas identitas, kualitas jasa, atau itikad Pengguna.
+      </div>
+
+      <p>KamiTolong tidak menyediakan, menjalankan, mengawasi, atau terlibat langsung dalam pelaksanaan jasa, negosiasi,
+        perjanjian, pembayaran, maupun transaksi apa pun antara Penyedia Jasa dan Pengguna Jasa. KamiTolong tidak
+        terlibat dalam, dan tidak memungut biaya, komisi, bagi hasil, atau keuntungan dalam bentuk apa pun dari
+        transaksi yang dilakukan antar Pengguna, serta tidak menjamin bahwa Pengguna akan menyelesaikan transaksi
+        tersebut.</p>
+      <p>KamiTolong berhak untuk:</p>
+      <ul>
+        <li>Mengganti, mengubah, menangguhkan atau menghentikan semua atau bagian apapun dari Aplikasi ini atau Layanan
+          setiap saat atau setelah memberikan pemberitahuan sebagaimana dipersyaratkan oleh undang-undang dan peraturan
+          setempat.</li>
+        <li>Meluncurkan Layanan tertentu atau fitur tertentu dalam versi beta, yang mungkin tidak berfungsi dengan baik
+          atau sama seperti versi akhir, dan kami tidak bertanggung jawab dalam hal demikian.</li>
+        <li>Membatasi fitur tertentu atau membatasi akses Anda ke bagian atau seluruh Aplikasi atau Layanan atas
+          kebijakannya sendiri dan tanpa pemberitahuan atau kewajiban apapun.</li>
+        <li>Memantau, mencatat, mengunduh dan menggunakan data aktivitas untuk keperluan bisnis perusahaan, sesuai
+          dengan Kebijakan Privasi yang terkait dengan Syarat Layanan ini.</li>
+      </ul>
+      <p>KamiTolong berhak untuk menolak memberikan akses ke Aplikasi atau Layanan kepada Anda atau mengizinkan Anda
+        untuk membuka Akun dengan alasan apapun.</p>
+
+      <div class="declaration">
+        <strong>PERNYATAAN PENTING</strong><br><br>
+        DENGAN MENGGUNAKAN LAYANAN KAMITOLONG ATAU MEMBUKA AKUN, ANDA MEMBERIKAN PENERIMAAN DAN PERSETUJUAN YANG TIDAK
+        DAPAT DICABUT ATAS PERSYARATAN PERJANJIAN INI, TERMASUK SYARAT DAN KETENTUAN TAMBAHAN SERTA KEBIJAKAN YANG
+        DISEBUTKAN DI SINI DAN/ATAU TERKAIT DI SINI.<br><br>
+        APABILA ANDA TIDAK MENYETUJUI KETENTUAN INI, MOHON JANGAN MENGGUNAKAN LAYANAN KAMI ATAU MENGAKSES APLIKASI.
+      </div>
+
+      <p>Untuk Pengguna di Bawah Umur: Apabila Anda di bawah usia 18 tahun atau berada dibawah pengampuan, Anda harus
+        mendapatkan izin dari orang tua atau wali untuk membuka akun dan orang tua atau wali tersebut harus menyetujui
+        ketentuan perjanjian ini. Orang tua atau wali akan bertanggung jawab atas semua penggunaan akun atau layanan.
+      </p>
+
+      <hr class="doc-divider">
+
+      <h3 id="syarat-2">2. Definisi</h3>
+      <p>Berikut adalah definisi dari istilah-istilah yang digunakan dalam Syarat Layanan ini:</p>
+      <ul>
+        <li><strong>Jasa:</strong> Setiap bentuk layanan atau pekerjaan yang ditawarkan atau diminta oleh Pengguna
+          melalui Platform KamiTolong, sepanjang bersifat legal dan tidak melanggar peraturan perundang-undangan yang
+          berlaku.</li>
+        <li><strong>Penyedia Jasa:</strong> Setiap orang yang, melalui akun Pengguna pada Platform KamiTolong, membuat
+          dan mempublikasikan Iklan penawaran Jasa.</li>
+        <li><strong>Pengguna Jasa:</strong> Setiap orang yang, melalui akun Pengguna pada Platform KamiTolong, membuat
+          dan mempublikasikan Iklan permintaan Jasa.</li>
+        <li><strong>Iklan:</strong> Setiap informasi, deskripsi, atau materi yang diunggah dan dipublikasikan oleh
+          Pengguna pada Platform KamiTolong untuk tujuan menawarkan Jasa atau mencari Jasa.</li>
+        <li><strong>Konten:</strong> Setiap bentuk data, informasi, materi, teks, foto, gambar, audio, video, atau
+          elemen lainnya yang diunggah, dikirimkan, disimpan, dipublikasikan, ditampilkan, atau disediakan oleh Pengguna
+          melalui Platform KamiTolong, baik sebagai bagian dari Iklan maupun dalam bentuk lainnya.</li>
+        <li><strong>Platform:</strong> Aplikasi mobile KamiTolong beserta seluruh sistem, infrastruktur, dan fitur yang
+          tersedia di dalamnya, yang digunakan oleh Pengguna untuk mengakses Layanan.</li>
+        <li><strong>Transaksi:</strong> Transaksi antara Penyedia Jasa dan Pengguna Jasa melalui Aplikasi.</li>
+      </ul>
+
+      <hr class="doc-divider">
+
+      <h3 id="syarat-3">3. Ketentuan Umum</h3>
+      <p>Anda berjanji bahwa Anda akan menggunakan Aplikasi hanya untuk tujuan penggunaan sebagaimana disebutkan pada
+        Syarat Layanan. Anda berjanji untuk tidak menyalahgunakan atau menggunakan Aplikasi untuk tujuan penipuan maupun
+        penyuapan publik atau komersial, serta tidak akan melakukan tindakan yang dapat menyebabkan Anda atau pihak lain
+        melanggar ketentuan peraturan dan hukum anti-penyuapan dan anti-korupsi yang berlaku di Indonesia.</p>
+      <p>Anda memahami dan setuju bahwa penggunaan Aplikasi oleh Anda akan tunduk pula pada Kebijakan Privasi kami
+        sebagaimana dapat diubah dari waktu ke waktu.</p>
+      <p>Dengan memberikan informasi kepada Kami, Anda menyatakan bahwa Anda memberikan hak kepada Kami atas penggunaan
+        informasi tersebut secara eksklusif untuk tujuan pelaksanaan Syarat Layanan ini.</p>
+      <p>Anda bertanggungjawab penuh atas semua informasi, data, dan/atau konten yang diunggah, dicantumkan, atau
+        dibagikan oleh Pengguna dan/atau pihak lain yang diberikan akses oleh Pengguna saat menggunakan Aplikasi.</p>
+      <p>Anda menyetujui untuk tidak melakukan hal-hal di bawah ini:</p>
+      <ul>
+        <li>Menggunakan Layanan untuk menyamar sebagai orang atau entitas lain, atau memalsukan afiliasi Anda dengan
+          seseorang atau suatu entitas</li>
+        <li>Menggunakan Layanan untuk tujuan selain untuk tujuan pelaksanaan Syarat Layanan ini</li>
+        <li>Menyebarluaskan, menjual, membagikan, atau menyediakan Iklan, Konten, informasi, fitur, atau layanan apa pun
+          yang tersedia pada Aplikasi tanpa izin tertulis dari Kami</li>
+        <li>Melakukan tindakan yang dapat merusak sistem Aplikasi</li>
+        <li>Menggunakan Layanan untuk sengaja atau tidak sengaja melanggar hukum, aturan, kode etik, arahan, pedoman,
+          kebijakan atau peraturan yang berlaku</li>
+        <li>Melakukan setiap dan segala tindakan sehubungan dengan Layanan pada Aplikasi yang dapat dianggap sebagai
+          tindakan yang melanggar hukum dan ketentuan perundangan yang berlaku di Indonesia</li>
+      </ul>
+      <p>Dengan menjadi Pengguna, Kami memiliki kewenangan dan hak penuh untuk menggunakan dan melakukan analisa atas
+        data pribadi Anda yang dilakukan melalui Aplikasi. Pengguna juga menyetujui bahwa Kami memiliki kewenangan penuh
+        untuk menggunakan data pribadi dan informasi Pengguna untuk diberikan kepada pihak ketiga yang bekerja sama atau
+        ditunjuk oleh Kami.</p>
+
+      <hr class="doc-divider">
+
+      <h3 id="syarat-4">4. Akun, Password, dan Keamanan</h3>
+      <p>Untuk mengakses dan menggunakan fitur tertentu pada Platform KamiTolong, Pengguna diwajibkan memiliki Akun
+        KamiTolong.</p>
+      <p>Pengguna dapat menggunakan fitur Platform secara lengkap setelah melakukan pendaftaran. Setelah pendaftaran
+        berhasil, KamiTolong akan menyediakan kepada Pengguna sebuah akun pribadi yang hanya dapat diakses menggunakan
+        kredensial yang dipilih oleh Pengguna.</p>
+      <p>Pembuatan Akun memerlukan identitas kontak berikut:</p>
+      <ul>
+        <li>Nomor telepon; dan/atau</li>
+        <li>Alamat email; dan/atau</li>
+        <li>Akun Google</li>
+      </ul>
+      <p>yang selanjutnya akan diikuti dengan proses verifikasi Akun.</p>
+      <p>Pengguna wajib memastikan bahwa seluruh informasi yang digunakan untuk membuat Akun adalah benar, valid,
+        akurat, dan merupakan milik Pengguna sendiri.</p>
+      <p>Pengguna yang belum mendaftarkan Akun hanya dapat melihat Konten tertentu dan tidak dapat menggunakan fitur
+        interaksi maupun fitur lain yang diperuntukkan bagi Pengguna terdaftar.</p>
+      <p>Setiap Akun hanya dapat digunakan oleh Pengguna yang bersangkutan. Pengguna dilarang memberikan wewenang,
+        kuasa, atau akses kepada pihak lain untuk menggunakan identitas atau Akun Pengguna, termasuk mengalihkan,
+        meminjamkan, atau menyerahkan Akun kepada pihak lain dengan alasan apa pun.</p>
+      <p>Pengguna bertanggung jawab sepenuhnya atas keamanan dan kerahasiaan seluruh kredensial akses Akun, termasuk
+        namun tidak terbatas pada login ID, kata sandi, kode verifikasi (OTP), alamat email, serta informasi lainnya
+        yang tercantum dalam Informasi Registrasi.</p>
+      <p>Dalam hal terjadi pengungkapan atau kebocoran kredensial akses Pengguna, dengan cara apa pun, yang
+        mengakibatkan adanya penggunaan Akun tanpa hak atau tanpa kewenangan, maka seluruh aktivitas yang dilakukan
+        melalui Akun tersebut akan tetap dianggap sah dan mengikat Pengguna, sepanjang KamiTolong belum menerima laporan
+        tertulis mengenai adanya akses ilegal atau penyalahgunaan Akun melalui kanal resmi KamiTolong.</p>
+      <p>Pengguna menyetujui bahwa KamiTolong tidak bertanggung jawab atas kerugian, gangguan, atau kendala apa pun yang
+        timbul akibat penyalahgunaan Akun yang disebabkan oleh kelalaian Pengguna, termasuk namun tidak terbatas pada:
+      </p>
+      <ul>
+        <li>Memberikan atau meminjamkan akses Akun kepada pihak lain</li>
+        <li>Mengakses tautan atau pihak ketiga yang tidak resmi</li>
+        <li>Memberikan atau memperlihatkan kode verifikasi (OTP), kata sandi, atau alamat email kepada pihak lain</li>
+        <li>Bentuk kelalaian lain yang mengakibatkan kerugian atau kendala pada Akun Pengguna</li>
+      </ul>
+      <p>Pengguna dilarang memanipulasi maupun menciptakan dan/atau menggunakan alat, perangkat, sistem, atau fitur apa
+        pun yang bertujuan untuk memanipulasi sistem Platform KamiTolong, termasuk namun tidak terbatas pada manipulasi
+        data, scraping dan/atau crawling, aktivitas otomatisasi yang tidak sah, dan/atau tindakan lain yang secara wajar
+        dapat dinilai sebagai upaya manipulasi sistem.</p>
+      <p>Pengguna wajib untuk senantiasa berhati-hati dalam berinteraksi dengan Pengguna lain, termasuk namun tidak
+        terbatas dengan tidak menyebarkan data pribadi yang bersifat sensitif kepada Pengguna lain dan tidak melakukan
+        pertemuan secara langsung di tempat yang sepi atau berpotensi membahayakan keselamatan.</p>
+      <p>KamiTolong berhak, berdasarkan diskresi tunggalnya, untuk menangguhkan, membatasi, atau menghapus Akun
+        Pengguna, dengan atau tanpa pemberitahuan sebelumnya, apabila ditemukan atau diduga adanya pelanggaran terhadap
+        Syarat Layanan ini, penggunaan yang tidak sah, atau pelanggaran terhadap hukum yang berlaku.</p>
+
+      <hr class="doc-divider">
+
+      <h3 id="syarat-5">5. Penggunaan Platform</h3>
+      <p>Pengguna wajib menggunakan Platform KamiTolong sesuai dengan hukum yang berlaku serta seluruh ketentuan dalam
+        Syarat Layanan ini.</p>
+      <p>Platform KamiTolong hanya dapat digunakan untuk tujuan yang sah, yaitu memposting Iklan penawaran jasa dan/atau
+        Iklan permintaan jasa. Pengguna dilarang menggunakan Platform untuk tujuan lain di luar fungsi tersebut.</p>
+      <p>Pengguna dilarang mengunggah, mempublikasikan, atau menyampaikan Iklan dan/atau Konten yang mengandung unsur:
+      </p>
+      <ul>
+        <li>Informasi yang tidak benar, menyesatkan, atau melanggar hukum</li>
+        <li>Penawaran atau permintaan jasa yang tidak legal</li>
+        <li>Penipuan, manipulasi, atau upaya untuk merugikan Pengguna lain</li>
+        <li>Unsur SARA, pornografi, kekerasan, ujaran kebencian, atau konten lain yang dilarang oleh hukum</li>
+        <li>Virus, malware, atau teknologi lain yang dapat mengganggu keamanan maupun operasional Platform</li>
+      </ul>
+      <p>Pengguna bertanggung jawab penuh atas setiap Iklan, Konten, komunikasi, dan tindakan yang dilakukan melalui
+        Akunnya, termasuk segala akibat hukum yang timbul dari penggunaan Platform.</p>
+      <p>KamiTolong berhak, berdasarkan kebijakannya sendiri, untuk menolak, menghapus, menonaktifkan, atau membatasi
+        akses terhadap setiap Iklan, Konten, atau Akun yang:</p>
+      <ul>
+        <li>Melanggar hukum</li>
+        <li>Melanggar Syarat Layanan ini</li>
+        <li>Berpotensi merugikan atau membahayakan Pengguna lain atau Platform KamiTolong</li>
+        <li>Tidak sesuai dengan standar kualitas serta kebijakan internal KamiTolong</li>
+      </ul>
+      <p>KamiTolong hanya menyediakan sarana elektronik untuk mempertemukan Penyedia Jasa dan Pengguna Jasa. Seluruh
+        Iklan dan Konten yang ditampilkan berasal dari Pengguna. Oleh karena itu, KamiTolong tidak memberikan jaminan
+        apa pun dan tidak bertanggung jawab atas keaslian, kebenaran, akurasi, kualitas, legalitas, maupun pelaksanaan
+        jasa, kesepakatan, pembayaran, garansi, atau hubungan hukum yang timbul antar Pengguna.</p>
+      <p>Pengguna bertanggung jawab penuh atas setiap risiko dan kerugian yang timbul akibat interaksi, Iklan, Konten,
+        maupun transaksi yang dilakukan melalui Platform, termasuk akibat memberikan informasi atau bukti pembayaran
+        kepada pihak lain. KamiTolong menyarankan Pengguna untuk melakukan verifikasi secara mandiri dan berhati-hati
+        sebelum menyepakati atau menggunakan jasa apa pun.</p>
+      <p>Pengguna dilarang menggunakan Iklan, Konten, atau fitur Platform KamiTolong untuk mengarahkan, mempromosikan,
+        atau memfasilitasi transaksi yang tidak sah. Informasi dalam Iklan wajib akurat, relevan, dan tidak menyesatkan.
+      </p>
+      <p>Pelanggaran terhadap Syarat Layanan ini dapat mengakibatkan satu atau lebih tindakan berikut:</p>
+      <ul>
+        <li>Penghapusan atau penonaktifan Konten dan/atau Iklan</li>
+        <li>Pembatasan fitur atau hak akses Akun</li>
+        <li>Penangguhan sementara atau penghentian permanen Akun</li>
+        <li>Tindakan hukum sesuai dengan peraturan perundang-undangan yang berlaku</li>
+      </ul>
+      <p>Apabila Pengguna mencurigai adanya pelanggaran Syarat Layanan oleh Pengguna lain, Pengguna dapat melaporkannya
+        melalui fitur laporkan KamiTolong yang tersedia dalam Aplikasi.</p>
+
+      <hr class="doc-divider">
+
+      <h3 id="syarat-6">6. Penolakan Jaminan dan Batasan Tanggung Jawab</h3>
+      <p>KamiTolong adalah perusahaan teknologi yang bergerak di bidang iklan baris online (classifieds ads) yang
+        menyediakan Platform untuk mempertemukan Penyedia Jasa dan Pengguna Jasa. KamiTolong hanya bertindak sebagai
+        penyedia sarana elektronik serta tidak terlibat dalam transaksi, negosiasi, pelaksanaan jasa, maupun hubungan
+        hukum apa pun yang timbul antara Pengguna.</p>
+      <p>Seluruh Iklan, informasi, gambar, deskripsi, keterangan, dan Konten lainnya yang ditampilkan dalam Platform
+        berasal dari Pengguna. KamiTolong tidak bertanggung jawab atas keakuratan, kelengkapan, kebenaran, kesesuaian,
+        kualitas, maupun legalitas informasi tersebut.</p>
+      <p>Seluruh informasi yang ditampilkan oleh Pengguna dalam Platform tidak dapat dianggap sebagai bentuk dukungan,
+        rekomendasi, persetujuan, atau jaminan dari KamiTolong terhadap Penyedia Jasa, Pengguna Jasa, maupun jasa yang
+        ditawarkan atau diminta.</p>
+      <p>KamiTolong tidak memiliki kepemilikan atas Iklan maupun Konten yang dipublikasikan oleh Pengguna dan tidak
+        terlibat dalam proses kesepakatan, pembayaran, pengaturan layanan, ruang lingkup jasa, garansi, maupun proses
+        purna transaksi.</p>
+      <p>Informasi dan Konten dalam Platform dapat mengandung ketidaktepatan, kesalahan penulisan, atau tidak diperbarui
+        secara real time. KamiTolong tidak berkewajiban untuk memperbarui atau memastikan keakuratan Konten maupun Iklan
+        yang dipublikasikan oleh Pengguna.</p>
+      <p>KamiTolong tidak memberikan jaminan apa pun, baik tersurat maupun tersirat, termasuk namun tidak terbatas pada
+        jaminan kualitas, kelayakan, keandalan, keamanan, ketersediaan, atau kesesuaian untuk tujuan tertentu atas
+        Platform, Iklan, maupun Konten. Platform disediakan dalam kondisi "sebagaimana adanya" dan "sebagaimana
+        tersedia".</p>
+      <p>Sejauh diizinkan oleh hukum yang berlaku, KamiTolong tidak bertanggung jawab atas kerugian dalam bentuk apa
+        pun, baik langsung, tidak langsung, khusus, insidental, konsekuensial, maupun kerugian yang bersifat menghukum,
+        termasuk namun tidak terbatas pada kehilangan data, keuntungan, reputasi, atau manfaat lain, yang timbul akibat:
+      </p>
+      <ul>
+        <li>Penggunaan atau ketidakmampuan Pengguna dalam menggunakan Platform</li>
+        <li>Keterlambatan, gangguan, bug, kesalahan, atau ketidakakuratan dalam Platform</li>
+        <li>Keputusan Pengguna untuk mengajukan atau tidak mengajukan penawaran, serta melakukan atau tidak melakukan
+          transaksi</li>
+        <li>Interaksi atau transaksi antara Pengguna</li>
+        <li>Pemberian informasi atau bukti pembayaran kepada pihak lain</li>
+        <li>Gangguan teknis atau kondisi di luar kendali KamiTolong</li>
+        <li>Virus, malware, atau perangkat lunak berbahaya lainnya</li>
+        <li>Tindakan peretasan atau penyalahgunaan akun oleh pihak ketiga</li>
+        <li>Tindakan penegakan, pembatasan, atau penghapusan akun oleh KamiTolong</li>
+        <li>Kerusakan pada perangkat keras atau sistem elektronik Pengguna</li>
+      </ul>
+      <p>KamiTolong tidak bertanggung jawab atas kepatuhan Penyedia Jasa maupun Pengguna Jasa terhadap peraturan
+        perundang-undangan yang berlaku, termasuk namun tidak terbatas pada perizinan, standar layanan, kewajiban pajak,
+        dan kewajiban hukum lainnya.</p>
+      <p>Pengguna memahami dan menyetujui bahwa penggunaan Platform sepenuhnya dilakukan atas kebijakan dan risiko
+        Pengguna sendiri. Pengguna bertanggung jawab penuh atas seluruh aktivitas, Konten, serta segala kerusakan atau
+        kehilangan pada sistem elektronik dan/atau data elektronik yang mungkin timbul akibat penggunaan Platform.</p>
+      <p>KamiTolong tidak bertanggung jawab atas tindakan pencemaran nama baik, pelanggaran hukum, atau perbuatan
+        melawan hukum lainnya yang dilakukan oleh pihak ketiga. Seluruh risiko atas kerugian atau kerusakan yang timbul
+        dari tindakan tersebut sepenuhnya menjadi tanggung jawab Pengguna.</p>
+
+      <hr class="doc-divider">
+
+      <h3 id="syarat-7">7. Ganti Rugi dan Pembebasan Tanggung Jawab</h3>
+      <p>Pengguna setuju untuk mengganti rugi, membela, dan membebaskan KamiTolong, beneficial owner, pemilik merek, dan
+        karyawannya (secara bersama-sama disebut "Pihak Terkait Aplikasi") dari segala klaim, tuntutan, kerugian, biaya,
+        dan pengeluaran (termasuk biaya hukum) yang timbul dari atau terkait dengan:</p>
+      <ul>
+        <li>Penyediaan, pengoperasian, atau pengelolaan Layanan oleh atau atas nama Aplikasi</li>
+        <li>Pelanggaran Anda terhadap Syarat Layanan atau kebijakan terkait lainnya</li>
+        <li>Penggunaan atau penyalahgunaan Layanan oleh Anda</li>
+        <li>Pelanggaran hukum atau hak pihak ketiga oleh Anda</li>
+      </ul>
+      <p>Pengguna juga membebaskan Pihak Terkait Aplikasi dari segala klaim atau tuntutan, termasuk biaya hukum yang
+        wajar, yang diajukan oleh pihak ketiga akibat:</p>
+      <ul>
+        <li>Pelanggaran Anda terhadap Perjanjian ini</li>
+        <li>Penggunaan Aplikasi yang tidak sesuai atau tidak sah</li>
+        <li>Pelanggaran hukum atau hak pihak ketiga oleh Anda</li>
+      </ul>
+
+      <hr class="doc-divider">
+
+      <h3 id="syarat-8">8. Pilihan Hukum</h3>
+      <p>Perjanjian ini diatur oleh dan ditafsirkan sesuai dengan hukum Republik Indonesia. Setiap sengketa yang timbul
+        dari atau terkait dengan Perjanjian ini akan diselesaikan secara eksklusif melalui pengadilan di Republik
+        Indonesia.</p>
+
+      <h3>9. Penyelesaian Perselisihan</h3>
+      <p>Setiap perbedaan atau perselisihan yang timbul dari atau terkait dengan Syarat Layanan ini akan diupayakan
+        untuk diselesaikan terlebih dahulu secara musyawarah untuk mencapai mufakat. Para pihak wajib memberitahukan
+        adanya Perselisihan secara tertulis melalui email atau cara lain yang dianggap sesuai.</p>
+      <p>Jika dalam waktu 30 (tiga puluh) hari sejak pemberitahuan tersebut, para pihak tidak berhasil mencapai
+        kesepakatan, maka Perselisihan akan diselesaikan melalui Pengadilan Negeri Denpasar.</p>
+
+      <h3>10. Perubahan Syarat Layanan</h3>
+      <p>Syarat Layanan ini dapat diubah atau diperbarui sewaktu-waktu tanpa pemberitahuan sebelumnya. Anda disarankan
+        untuk secara berkala meninjau halaman Syarat Layanan ini untuk mengetahui adanya perubahan. Dengan terus
+        menggunakan layanan Aplikasi setelah adanya perubahan, Anda dianggap telah menyetujui perubahan tersebut.</p>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
